@@ -4,7 +4,7 @@ CXX = g++
 
 CXXFLAG = -Wall -Wextra -Werror -std=c++17
 
-SRCS= main.c
+SRCS= main.cpp contact.cpp phoneBook.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAG) $(OBJ) -o $(NAME)
 
 %.o:%.cpp
-  	$(CXX) $(CXXFLAG) -c $< -o $@
+	$(CXX) $(CXXFLAG) -c $< -o $@
 
 fclean: clean
 	rm -f $(NAME)

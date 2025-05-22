@@ -26,7 +26,7 @@ void PhoneBook::displayTable() const {
     cout << setw(10) << "Last Name" << "|";
     cout << setw(10) << "Nick Name" << endl;
 
-    for(int i; i < count < i++)
+    for(int i; i < count ; i++)
     {
         cout << setw(10) << i << "|";
         cout << setw(10) << people[i].getFirstName() << "|";
@@ -35,6 +35,11 @@ void PhoneBook::displayTable() const {
     }
 }
 
-void PhoneBook::displayContacts() const {
-    
+// void PhoneBook::displayContacts() const {
+
+// }
+
+int PhoneBook::CountIt() const {
+    return count;
 }
+

@@ -1,4 +1,4 @@
-#include "Contact.hpp"
+#include "contact.hpp"
 
 /*
     I can do this in the library but this is more readable and understand the connection between in the class.

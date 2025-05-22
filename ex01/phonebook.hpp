@@ -6,12 +6,13 @@
 
 class PhoneBook {
     private:
-    Contact people[8]; // Max number of the phonebook list.
-    int count;
-    int oldPeople;
+        Contact people[8]; // Max number of the phonebook list.
+        int count;
+        int oldPeople;
     public:
-    PhoneBook(); // I will declare it count and old people.
-    void addPeople(const Contact& whoAreYou);
-    void displayTable() const;
-    void displayContacts() const;
-}
+        PhoneBook(); // I will declare it count and old people.
+        void addPeople(const Contact& whoAreYou);
+        void displayTable() const;
+        // void displayContacts() const;
+        int CountIt() const;
+};
