@@ -13,6 +13,6 @@ class PhoneBook {
         PhoneBook(); // I will declare it count and old people.
         void addPeople(const Contact& whoAreYou);
         void displayTable() const;
-        // void displayContacts() const;
-        int CountIt() const;
+        void displayContacts(int index) const;
+        int CountIt() const;;
 };

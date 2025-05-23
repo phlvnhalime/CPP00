@@ -8,7 +8,6 @@ using namespace std;
 string enterInput(const string &dot)
 {
     string input;
-
     do
     {
         cout << dot;
@@ -56,14 +55,35 @@ void searchContact(PhoneBook &phoneBook)
     phoneBook.displayTable();
 
     cout << "Who do you want to call: " << endl;
-    string index;
-    getline(cin,index);
+    string strIndex;
+    getline(cin,strIndex);
 
     if(cin.eof())
     {
         cout << "Back to phonebook!" << endl;
         exit(0);
     }
+
+    for(size_t i = 0; i < strIndex.length(); i++)
+    {
+        if (!isdigit(strIndex[i]))
+        {
+            cout << "Invalid index!" << endl;
+            return;
+        }
+    }
+
+    int index;
+    if(strIndex.empty())
+    {
+        index = -1;
+    }
+    else
+    {
+        index = stoi(strIndex); //string to integer
+    }
+
+    phoneBook.displayContacts(index);
 }
 
 int main()
