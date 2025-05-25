@@ -2,25 +2,24 @@
 #include <string>
 #include <cctype>
 
-using namespace std; // Import everything!
 char ft_toupper(char c);
 
 int main(int ac, char *av[])
 {
     if(ac == 1)
     {
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     }
     else
     {
         for(int i = 1 ; i < ac ; i++)
         {
 
-            string arg(av[i]);
+            std::string arg(av[i]);
             size_t j = 0;
             while(j < arg.length()) // It is write everything without space
             {
-                cout << ft_toupper(arg[j]);
+                std::cout << ft_toupper(arg[j]);
                 j++;
             }
             // If i want to add space in here i have to add space
@@ -34,7 +33,7 @@ int main(int ac, char *av[])
 
             */
         }
-        cout << endl;
+        std::cout << std::endl;
     }
     return 0;
 }

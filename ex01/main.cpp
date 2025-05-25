@@ -3,23 +3,21 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
-string enterInput(const string &dot)
+std::string enterInput(const std::string &dot)
 {
-    string input;
+    std::string input;
     do
     {
-        cout << dot;
-        getline(cin, input);
-        if(cin.eof())
+        std::cout << dot;
+        std::getline(std::cin, input);
+        if(std::cin.eof())
         {
-            cout << "\nEnd of line! Program is closed!" << endl;
+            std::cout << "\nEnd of line! Program is closed!" << std::endl;
             exit(0);
         }
         if(input.empty())
         {
-            cout << "\nInput is empty. Please try again!" << endl;
+            std::cout << "\nInput is empty. Please try again!" << std::endl;
             exit(0);
         }
     } while (input.empty());
@@ -30,7 +28,7 @@ string enterInput(const string &dot)
 void addContact(PhoneBook &phoneBook)
 {
     Contact new_person;
-    string firstName, lastName, nickName, phoneNumber, darkestSecret;
+    std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
 
     firstName = enterInput("Enter the first name: ");
     lastName = enterInput("Enter the last name: ");
@@ -41,26 +39,26 @@ void addContact(PhoneBook &phoneBook)
     new_person.Info(firstName,lastName,nickName,phoneNumber,darkestSecret);
     phoneBook.addPeople(new_person);
 
-    cout << "Added Successfully!" << endl;
+    std::cout << "Added Successfully!" << std::endl;
 }
 
 void searchContact(PhoneBook &phoneBook)
 {
     if (phoneBook.CountIt() == 0)
     {
-        cout << "There is nobody in my phonebook!" << endl;
+        std::cout << "There is nobody in my phonebook!" << std::endl;
         exit(0);
     }
 
     phoneBook.displayTable();
 
-    cout << "Who do you want to call: " << endl;
-    string strIndex;
-    getline(cin,strIndex);
+    std::cout << "Who do you want to call: " << std::endl;
+    std::string strIndex;
+    std::getline(std::cin,strIndex);
 
-    if(cin.eof())
+    if(std::cin.eof())
     {
-        cout << "Back to phonebook!" << endl;
+        std::cout << "Back to phonebook!" << std::endl;
         exit(0);
     }
 
@@ -68,7 +66,7 @@ void searchContact(PhoneBook &phoneBook)
     {
         if (!isdigit(strIndex[i]))
         {
-            cout << "Invalid index!" << endl;
+            std::cout << "Invalid index!" << std::endl;
             return;
         }
     }
@@ -89,18 +87,18 @@ void searchContact(PhoneBook &phoneBook)
 int main()
 {
     PhoneBook phoneBook;
-    string command;
+    std::string command;
 
-    cout << "Welcome to Halime's PhoneBook!" << endl;
+    std::cout << "Welcome to Halime's PhoneBook!" << std::endl;
 
     while(1)
     {
-        cout << "\n Enter a command (ADD, SEARCH, EXIT): ";
-        getline(cin, command);
+        std::cout << "\n Enter a command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, command);
 
-        if(cin.eof()) // Affective to use for control-C and control D 
+        if(std::cin.eof()) // Affective to use for control-C and control D 
         {
-            cout << "\nEnd of file!" << endl;
+            std::cout << "\nEnd of file!" << std::endl;
             break;
         }
 
@@ -114,7 +112,7 @@ int main()
         }
         else if (command == "EXIT")
         {
-            cout << "You will lost all contact forever! Good Bye :)" << endl;
+            std::cout << "You will lost all contact forever! Good Bye :)" << std::endl;
             break;
         }
     }

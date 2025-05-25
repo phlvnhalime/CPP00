@@ -1,7 +1,5 @@
 #include "phonebook.hpp"
 
-using namespace std;
-
 PhoneBook::PhoneBook() : count(0), oldPeople(0){
 
 }
@@ -19,7 +17,7 @@ void PhoneBook::addPeople(const Contact& whoAreYou){
     }
 }
 
-string truncateStr(const string &str) {
+std::string truncateStr(const std::string &str) {
 
     if(str.length() > 10)
     {
@@ -36,18 +34,18 @@ string truncateStr(const string &str) {
 */
 
 void PhoneBook::displayTable() const {
-    cout << right; // Left is better than right !
-    cout << setw(10) << "Index" << "|";
-    cout << setw(10) << "First Name" << "|";
-    cout << setw(10) << "Last Name" << "|";
-    cout << setw(10) << "Nick Name" << endl;
+    std::cout << std::right; // Left is better than right !
+    std::cout << std::setw(10) << "Index" << "|";
+    std::cout << std::setw(10) << "First Name" << "|";
+    std::cout << std::setw(10) << "Last Name" << "|";
+    std::cout << std::setw(10) << "Nick Name" << std::endl;
 
     for(int i = 0; i < count ; i++)
     {
-        cout << setw(10) << i << "|";
-        cout << setw(10) << truncateStr(people[i].getFirstName()) << "|";
-        cout << setw(10) << truncateStr(people[i].getLastName()) << "|";
-        cout << setw(10) << truncateStr(people[i].getNickName()) << endl;
+        std::cout << std::setw(10) << i << "|";
+        std::cout << std::setw(10) << truncateStr(people[i].getFirstName()) << "|";
+        std::cout << std::setw(10) << truncateStr(people[i].getLastName()) << "|";
+        std::cout << std::setw(10) << truncateStr(people[i].getNickName()) << std::endl;
     }
 }
 
@@ -55,15 +53,15 @@ void PhoneBook::displayContacts(int index) const {
 
     if(index < 0 ||  index >= count)
     {
-        cout << "Invalid index!" << endl;
+        std::cout << "Invalid index!" << std::endl;
         return;
     }
 
-    cout << "First Name: " << people[index].getFirstName() << endl;
-    cout << "Last Name: " << people[index].getLastName() << endl;
-    cout << "Nick Name: " << people[index].getNickName() << endl;
-    cout << "Phone Number: " << people[index].getPhoneNumber() << endl;
-    cout << "Darkest Secret: " << people[index].getDarkestSecret() << endl;
+    std::cout << "First Name: " << people[index].getFirstName() << std::endl;
+    std::cout << "Last Name: " << people[index].getLastName() << std::endl;
+    std::cout << "Nick Name: " << people[index].getNickName() << std::endl;
+    std::cout << "Phone Number: " << people[index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << people[index].getDarkestSecret() << std::endl;
 
 }
 

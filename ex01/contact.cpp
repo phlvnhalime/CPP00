@@ -4,13 +4,12 @@
     I can do this in the library but this is more readable and understand the connection between in the class.
 */
 
-using namespace std;
 
 Contact::Contact(){
     //Default function.
 }
 
-void    Contact::Info(const string &first, const string &last,const string &nick,const string &phone, const string &darkest)
+void    Contact::Info(const std::string &first, const std::string &last,const std::string &nick,const std::string &phone, const std::string &darkest)
 {
     firstName = first;
     lastName = last;
@@ -19,23 +18,23 @@ void    Contact::Info(const string &first, const string &last,const string &nick
     darkestSecret = darkest;
 }
 
-string Contact::getFirstName() const {
+std::string Contact::getFirstName() const {
     return firstName;
 }
 
-string Contact::getLastName() const {
+std::string Contact::getLastName() const {
     return lastName;
 }
 
-string Contact::getNickName() const {
+std::string Contact::getNickName() const {
     return nickName;
 }
 
 
-string Contact::getPhoneNumber() const {
+std::string Contact::getPhoneNumber() const {
     return phoneNumber;
 }
 
-string Contact::getDarkestSecret() const {
+std::string Contact::getDarkestSecret() const {
     return darkestSecret;
 }
