@@ -93,4 +93,5 @@ Proper separation of interface and implementation
 This module was a crucial stepping stone in my transition from C to C++. It introduced me to structured and scalable programming using OOP principles.I made sure each exercise is beginner-friendly and well-documented for future reference.
 💬 “By Odin, by Thor! Use your brain!!!” – the subject says it best.
 If you're beginning your C++ journey, this is a great place to start.Feel free to explore each folder for more detailed explanations and comments. 🚀
-Author: Halime PehlivanSchool: 42 Heilbronn
+Author: Halime Pehlivan.
+School: 42 Heilbronn
